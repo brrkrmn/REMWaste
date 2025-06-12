@@ -2,7 +2,6 @@ import { useSkipsContext } from "@/context/skips/skipsProvider";
 import * as motion from "motion/react-client";
 import Link from "next/link";
 import { FaAngleRight } from "react-icons/fa6";
-import { GoAlertFill } from "react-icons/go";
 import { IoIosTimer } from "react-icons/io";
 
 const OrderSummary = () => {
@@ -17,48 +16,42 @@ const OrderSummary = () => {
       exit={{ opacity: 0, x: 100 }}
       transition={{ duration: 0.5 }}
     >
-      <div className="w-full flex flex-col items-start justify-start gap-4 bg-background p-8 verticalGradient">
-        <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-foreground-secondary via-foreground to-foreground-secondary">
+      <div className="w-full flex flex-col items-center sm:items-start justify-start gap-4 bg-background py-4 px-2 sm:p-8 verticalGradient">
+        <h3 className="hidden sm:flex text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-foreground-secondary via-foreground to-foreground-secondary">
           Order Summary
         </h3>
-        <p className="flex items-start text-start justify-start gap-2 rounded-full text-warning text-sm px-2">
+        <p className="flex items-start text-center sm:text-start justify-start gap-2 rounded-full text-warning text-[13px] sm:text-sm px-2">
           Imagery and information shown throughout this website may not reflect
           the exact shape or size specification, colours may vary, options
           and/or accessories may be featured at additional cost.
         </p>
-        <div className="my-4 border-[0.5px] bg-background-secondary rounded-lg border-background-secondary p-4 w-full flex flex-col items-start gap-2">
-          <h3 className="text-2xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-foreground-secondary via-foreground to-foreground-secondary">
-            {selectedSkip.size} Yard Skip
-          </h3>
-          <div
-            className={`${
-              selectedSkip.allowed_on_road ? "opacity-0" : "opacity-100"
-            } transition flex items-center justify-start gap-2 border-[0.5px] border-[#f5a524] bg-background-warning rounded-full text-warning text-sm px-2`}
-          >
-            <GoAlertFill />
-            <p>Not Allowed On The Road</p>
+        <div className="sm:my-2 border-[0.5px] bg-background-secondary rounded-lg border-background-secondary p-4 w-full flex flex-col items-start gap-2">
+          <div className="flex w-full items-center justify-between">
+            <h3 className="text-nowrap text-md sm:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-br from-foreground-secondary via-foreground to-foreground-secondary">
+              {selectedSkip.size} Yard Skip
+            </h3>
+            <p className="text-lg sm:text-xl font-semibold text-primary mt-auto text-end">
+              £{selectedSkip.price_before_vat}
+            </p>
+            <p className="text-md text-foreground-secondary flex items-center justify-end gap-1">
+              <IoIosTimer className="w-4 h-4" />
+              {selectedSkip.hire_period_days} days
+            </p>
           </div>
-          <p className="text-2xl font-bold text-primary mt-auto w-full text-end">
-            £{selectedSkip.price_before_vat}
-          </p>
-          <p className="text-sm text-foreground-secondary w-full flex items-center justify-end gap-1">
-            <IoIosTimer className="w-4 h-4" />
-            {selectedSkip.hire_period_days} day hire period
-          </p>
         </div>
-        <div className="w-full flex items-items justify-between gap-2 *:transition-all *:duration-200 *:rounded-lg">
+        <div className="w-full flex items-items justify-between gap-2 *:transition-all *:duration-200 *:rounded-lg *:text-sm *:sm:text-base">
           <button
             onClick={() => setSelectedSkip(null)}
-            className="flex items-center justify-center cursor-pointer bg-background-secondary px-8 text-foreground-secondary border-[0.5px] border-foreground-secondary hover:border-foreground hover:text-foreground"
+            className="w-full flex items-center justify-center cursor-pointer bg-background-secondary px-4 text-foreground-secondary border-[0.5px] border-foreground-secondary hover:border-foreground hover:text-foreground"
           >
             Unselect
           </button>
           <Link
             href="/permit-check"
-            className="cursor-pointer flex items-center justify-center gap-1 group border-1 text-background font-semibold bg-gradient-to-br from-yellow to-70% to-primary px-4 py-2"
+            className="w-full cursor-pointer flex items-center justify-center gap-1 group border-1 text-background font-semibold bg-gradient-to-br from-yellow to-70% to-primary px-4 py-2"
           >
             <p>Continue</p>
-            <FaAngleRight className="group-hover:translate-x-2 transition" />
+            <FaAngleRight className="group-hover:translate-x-1 transition" />
           </Link>
         </div>
       </div>
