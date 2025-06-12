@@ -21,7 +21,7 @@ const RootLayout = ({
     <html lang="en" className={dmSans.className}>
       <body className="container responsiveFlex">
         <Navbar />
-        <main className="w-full h-full min-h-screen py-10 md:ml-44">
+        <main className="w-full h-full min-h-screen py-10 md:py-18 md:ml-48">
           {children}
         </main>
       </body>
