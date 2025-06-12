@@ -5,11 +5,17 @@ import SkipCard from "@/components/SkipCard/SkipCard";
 import { useGetSkips } from "@/hooks/useSkip";
 import { Skip } from "@/services/skip/skip.types";
 import * as motion from "motion/react-client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { mockSkips } from "./constants";
 
 const SelectSkipPage = () => {
-  const { data: skips } = useGetSkips();
+  const { data } = useGetSkips();
   const [selected, setSelected] = useState<null | Skip>(null);
+  const [skips, setSkips] = useState<Skip[]>();
+
+  useEffect(() => (
+    setSkips(data || mockSkips)
+  ), [data])
 
   return (
     <motion.div

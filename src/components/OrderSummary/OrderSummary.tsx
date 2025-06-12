@@ -7,7 +7,7 @@ import { IoIosTimer } from "react-icons/io";
 const OrderSummary = () => {
   return (
     <motion.div
-      className="border-1 fixed bottom-2 right-2 overflow-hidden w-[400px] bg-background rounded-2xl border-secondary flex items-center justify-center"
+      className="border-1 fixed bottom-2 right-2 overflow-hidden w-[95%] sm:w-[400px] bg-background rounded-2xl border-secondary flex items-center justify-center"
       initial={{ opacity: 0, x: 100 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 100 }}
@@ -41,10 +41,16 @@ const OrderSummary = () => {
           </p>
         </div>
         <div className="w-full flex items-items justify-between gap-2 *:transition-all *:duration-200 *:rounded-lg">
-          <Link href="/waste-type" className="cursor-pointer bg-background-secondary px-8 text-foreground-secondary border-[0.5px] border-foreground-secondary hover:border-foreground hover:text-foreground">
+          <Link
+            href="/waste-type"
+            className="flex items-center justify-center cursor-pointer bg-background-secondary px-8 text-foreground-secondary border-[0.5px] border-foreground-secondary hover:border-foreground hover:text-foreground"
+          >
             Back
           </Link>
-          <Link href="/permit-check" className="cursor-pointer flex items-center justify-center gap-1 group border-1 text-background font-semibold bg-gradient-to-br from-yellow to-70% to-primary px-4 py-2">
+          <Link
+            href="/permit-check"
+            className="cursor-pointer flex items-center justify-center gap-1 group border-1 text-background font-semibold bg-gradient-to-br from-yellow to-70% to-primary px-4 py-2"
+          >
             <p>Continue</p>
             <FaAngleRight className="group-hover:translate-x-2 transition" />
           </Link>
