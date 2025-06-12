@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar/Navbar";
+import SkipsProvider from "@/context/skips/skipsProvider";
 import ReactQueryProvider from "@/providers/ReactQueryProvider/ReactQueryProvider";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
@@ -22,10 +23,12 @@ const RootLayout = ({
     <html lang="en" className={dmSans.className}>
       <body className="container responsiveFlex min-h-screen">
         <ReactQueryProvider>
-          <Navbar />
-          <main className="w-full h-full py-10 md:py-18 md:ml-48">
-            {children}
-          </main>
+          <SkipsProvider>
+            <Navbar />
+            <main className="w-full h-full py-10 md:py-18 md:ml-48">
+              {children}
+            </main>
+          </SkipsProvider>
         </ReactQueryProvider>
       </body>
     </html>

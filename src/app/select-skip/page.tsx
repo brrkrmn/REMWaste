@@ -2,20 +2,11 @@
 
 import OrderSummary from "@/components/OrderSummary/OrderSummary";
 import SkipCard from "@/components/SkipCard/SkipCard";
-import { useGetSkips } from "@/hooks/useSkip";
-import { Skip } from "@/services/skip/skip.types";
+import { useSkipsContext } from "@/context/skips/skipsProvider";
 import * as motion from "motion/react-client";
-import { useEffect, useState } from "react";
-import { mockSkips } from "./constants";
 
 const SelectSkipPage = () => {
-  const { data } = useGetSkips();
-  const [selected, setSelected] = useState<null | Skip>(null);
-  const [skips, setSkips] = useState<Skip[]>();
-
-  useEffect(() => (
-    setSkips(data || mockSkips)
-  ), [data])
+  const { skips, selectedSkip } = useSkipsContext();
 
   return (
     <motion.div
@@ -35,15 +26,10 @@ const SelectSkipPage = () => {
       </motion.h6>
       <div className="my-10 w-full flex flex-wrap items-center justify-center md:justify-start gap-10">
         {skips?.map((skip) => (
-          <SkipCard
-            key={skip.id}
-            skip={skip}
-            isSelected={selected === skip}
-            setSelected={setSelected}
-          />
+          <SkipCard key={skip.id} skip={skip} />
         ))}
       </div>
-      {selected && <OrderSummary />}
+      {selectedSkip && <OrderSummary />}
     </motion.div>
   );
 };

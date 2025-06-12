@@ -22,16 +22,9 @@
   --color-yellow: #e8e000;
 }
 
-html {
-  overflow: hidden;
-  height: 100%;
-}
-
 body {
   background: var(--color-linear-background-left);
   color: var(--color-foreground);
-  height: 100%;
-  overflow: auto;
 }
 
 @media (max-width: 768px) {

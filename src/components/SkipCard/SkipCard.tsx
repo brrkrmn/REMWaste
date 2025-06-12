@@ -1,22 +1,18 @@
+import { useSkipsContext } from "@/context/skips/skipsProvider";
 import { Skip } from "@/services/skip/skip.types";
 import Image from "next/image";
 import { FaCheck } from "react-icons/fa";
 import { GoAlertFill } from "react-icons/go";
 import { IoIosTimer } from "react-icons/io";
 
-const SkipCard = ({
-  skip,
-  isSelected,
-  setSelected,
-}: {
-  skip: Skip;
-  isSelected: boolean;
-  setSelected: (skip: Skip | null) => void;
-  }) => {
+const SkipCard = ({ skip }: { skip: Skip }) => {
+  const { selectedSkip, setSelectedSkip } = useSkipsContext();
 
   const handleClick = () => {
-    setSelected(isSelected ? null : skip);
-  }
+    setSelectedSkip(isSelected ? null : skip);
+  };
+
+  const isSelected = selectedSkip === skip;
 
   return (
     <button
