@@ -20,10 +20,10 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" className={dmSans.className}>
-      <body className="container responsiveFlex">
+      <body className="container responsiveFlex min-h-screen">
         <ReactQueryProvider>
           <Navbar />
-          <main className="w-full h-full min-h-screen py-10 md:py-18 md:ml-48">
+          <main className="w-full h-full py-10 md:py-18 md:ml-48">
             {children}
           </main>
         </ReactQueryProvider>
