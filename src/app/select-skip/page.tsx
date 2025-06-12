@@ -1,5 +1,6 @@
 "use client";
 
+import OrderSummary from "@/components/OrderSummary/OrderSummary";
 import SkipCard from "@/components/SkipCard/SkipCard";
 import { useGetSkips } from "@/hooks/useSkip";
 import { Skip } from "@/services/skip/skip.types";
@@ -36,6 +37,7 @@ const SelectSkipPage = () => {
           />
         ))}
       </div>
+      {selected && <OrderSummary />}
     </motion.div>
   );
 };
