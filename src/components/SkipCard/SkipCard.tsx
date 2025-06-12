@@ -44,7 +44,7 @@ const SkipCard = ({ skip }: { skip: Skip }) => {
           height={300}
           className={`${
             isSelected ? "scale-110 grayscale-0" : "grayscale-50 scale-100"
-          } object-cover w-full h-full transition group-hover:grayscale-0 group-hover:scale-110`}
+          } [@media(max-width:380px)]:-translate-x-10 object-cover w-full h-full transition group-hover:grayscale-0 group-hover:scale-110`}
         />
       </div>
       <div className="flex flex-col items-start p-4 gap-2 w-full h-full">
@@ -52,7 +52,7 @@ const SkipCard = ({ skip }: { skip: Skip }) => {
           {skip.size} Yard Skip
         </h3>
         {!skip.allowed_on_road && (
-          <div className="flex items-center justify-start gap-2 border-[0.5px] border-[#f5a524] bg-background-warning rounded-full text-warning text-sm px-2">
+          <div className="flex items-center justify-start gap-2 border-[0.5px] border-warning bg-background-warning rounded-full text-warning text-sm px-2">
             <GoAlertFill />
             <p>Not Allowed On The Road</p>
           </div>
