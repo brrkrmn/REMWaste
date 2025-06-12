@@ -1,6 +1,12 @@
+"use client";
+
+import { useGetSkips } from "@/hooks/useSkip";
 import * as motion from "motion/react-client";
 
 const SelectSkipPage = () => {
+  const { data: skips } = useGetSkips();
+
+  console.log(skips);
   return (
     <motion.div
       initial={{ opacity: 0 }}
