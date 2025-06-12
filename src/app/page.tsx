@@ -1,6 +1,7 @@
+import { redirect } from "next/navigation";
 
 const Home = () => {
-  return <div className="container"></div>;
-}
+  redirect("select-skip");
+};
 
 export default Home;

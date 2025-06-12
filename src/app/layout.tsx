@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar/Navbar";
 import type { Metadata } from "next";
 import { DM_Sans } from "next/font/google";
 import "./globals.css";
@@ -18,7 +19,10 @@ const RootLayout = ({
 }>) => {
   return (
     <html lang="en" className={dmSans.className}>
-      <body>{children}</body>
+      <body className="container responsiveFlex">
+        <Navbar />
+        <main className="w-full min-h-screen">{children}</main>
+      </body>
     </html>
   );
 };

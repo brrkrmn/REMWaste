@@ -13,7 +13,11 @@ body {
 }
 
 .container {
-  @apply w-full max-w-[1400px] min-h-screen mx-auto flex items-center justify-center;
+  @apply w-full max-w-[1400px] min-h-screen mx-auto;
+}
+
+.responsiveFlex {
+  @apply flex flex-col items-center justify-center md:flex-row;
 }
 
 .title {
