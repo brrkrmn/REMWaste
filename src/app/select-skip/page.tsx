@@ -15,7 +15,9 @@ const SelectSkipPage = () => {
       transition={{ duration: 1, delay: 0.2 }}
       className="flex flex-col *:text-center items-center md:items-start justify-center gap-2"
     >
-      <h1 className="title">Choose Your Skip Size</h1>
+      <h1 className="title text-center sm:!text-start">
+        Choose Your Skip Size
+      </h1>
       <motion.h6
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

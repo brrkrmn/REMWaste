@@ -21,13 +21,12 @@ const SkipsProvider = ({ children }: { children: React.ReactNode }) => {
   const [skips, setSkips] = useState<Skip[]>();
   const [selectedSkip, setSelectedSkip] = useState<Skip | null>(null);
 
+// Using mock data as a fallback in case the API returns a "Project not specified" error
   useEffect(() => setSkips(data || mockSkips), [data]);
 
   if (skips)
     return (
-      <SkipsContext.Provider
-        value={{ skips, selectedSkip, setSelectedSkip }}
-      >
+      <SkipsContext.Provider value={{ skips, selectedSkip, setSelectedSkip }}>
         {children}
       </SkipsContext.Provider>
     );

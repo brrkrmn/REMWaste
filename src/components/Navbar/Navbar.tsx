@@ -71,7 +71,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, x: -18 }}
                     animate={isHovered ? { opacity: 1, x: 0 } : {}}
                     exit="hidden"
-                    transition={{ duration: 0.2, delay: i * 0.05 }}
+                    transition={{ duration: 0.05, delay: i * 0.03 }}
                   >
                     {char === " " ? <span>&nbsp;</span> : char}
                   </motion.p>
