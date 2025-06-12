@@ -26,7 +26,7 @@ const SelectSkipPage = () => {
       >
         Select the skip size that best suits your needs
       </motion.h6>
-      <div className="my-10 w-full flex flex-wrap items-center justify-start gap-10">
+      <div className="my-10 w-full flex flex-wrap items-center justify-center md:justify-start gap-10">
         {skips?.map((skip) => (
           <SkipCard
             key={skip.id}

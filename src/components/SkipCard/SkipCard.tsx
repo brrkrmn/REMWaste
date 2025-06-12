@@ -23,7 +23,7 @@ const SkipCard = ({
       onClick={handleClick}
       className={`${
         isSelected && "border-1 border-secondary"
-      } relative cursor-pointer flex items-start justify-between bg-background-secondary text-foreground rounded-2xl overflow-hidden w-full h-40 max-w-lg group border-1 border-gray-900 hover:border-secondary transition-all duration-300`}
+      } relative cursor-pointer flex flex-col sm:flex-row items-start justify-between bg-background-secondary text-foreground rounded-2xl overflow-hidden w-full sm:h-40 max-w-sm sm:max-w-lg group border-1 border-gray-900 hover:border-secondary transition-all duration-300`}
     >
       <div
         className={`${
