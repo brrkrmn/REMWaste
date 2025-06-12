@@ -1,23 +1,13 @@
-import * as motion from "motion/react-client";
+import FadeIn from "@/components/FadeIn/FadeIn";
 
 const PostcodePage = () => {
   return (
-    <motion.div
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 1, delay: 0.2 }}
-      className="min-h-screen flex flex-col *:text-center items-center md:items-start justify-start gap-2"
-    >
+    <FadeIn className="min-h-screen flex flex-col *:text-center items-center md:items-start justify-start gap-2">
       <h1 className="title text-center sm:!text-start">Skip Hire</h1>
-      <motion.h6
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2 }}
-        className="text-xl text-foreground-secondary px-1"
-      >
+      <h6 className="text-xl text-foreground-secondary px-1">
         With A Difference
-      </motion.h6>
-    </motion.div>
+      </h6>
+    </FadeIn>
   );
 };
 
