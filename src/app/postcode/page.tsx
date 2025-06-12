@@ -6,7 +6,7 @@ const PostcodePage = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
-      className="flex flex-col *:text-center items-center md:items-start justify-center"
+      className="flex flex-col *:text-center items-center md:items-start justify-center gap-2"
     >
       <h1 className="title">Skip Hire</h1>
       <motion.h6
