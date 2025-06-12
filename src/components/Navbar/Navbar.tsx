@@ -4,6 +4,7 @@ import * as motion from "motion/react-client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import AnimatedText from "./components/AnimatedText/AnimatedText";
 import { navLinks } from "./constants";
 
 const Navbar = () => {
@@ -13,18 +14,18 @@ const Navbar = () => {
   return (
     <div className="w-full md:w-60 py-10 md:py-0 flex flex-row md:flex-col gap-4 sm:gap-8 justify-center items-center md:items-start md:fixed md:top-1/2 md:-translate-y-1/2 md:left-10">
       {navLinks.map((navLink) => {
-        const isActive = pathname === navLink.link;
-        const isHovered = hoveredLink === navLink.link;
+        const isActive = pathname === navLink.path;
+        const isHovered = hoveredLink === navLink.path;
 
         return (
           <Link
             key={navLink.step}
-            href={navLink.disabled ? "#" : navLink.link}
+            href={navLink.disabled ? "#" : navLink.path}
             className={`${
               navLink.disabled && "cursor-not-allowed"
             } rounded-full relative duration-300 ease-in flex items-center justify-center`}
             data-active={isActive}
-            onMouseOver={() => setHoveredLink(navLink.link)}
+            onMouseOver={() => setHoveredLink(navLink.path)}
             onMouseLeave={() => setHoveredLink(pathname)}
           >
             <div
@@ -65,17 +66,7 @@ const Navbar = () => {
                     : "text-primary"
                 } flex absolute text-start w-full text-nowrap -bottom-8 md:bottom-auto md:-right-20 text-lg underline underline-offset-8`}
               >
-                {navLink.text.split("").map((char, i) => (
-                  <motion.p
-                    key={i}
-                    initial={{ opacity: 0, x: -18 }}
-                    animate={isHovered ? { opacity: 1, x: 0 } : {}}
-                    exit="hidden"
-                    transition={{ duration: 0.05, delay: i * 0.03 }}
-                  >
-                    {char === " " ? <span>&nbsp;</span> : char}
-                  </motion.p>
-                ))}
+                <AnimatedText text={navLink.text} isHovered={isHovered} />
               </div>
             )}
           </Link>
