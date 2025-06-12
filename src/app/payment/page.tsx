@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation";
+
 const PaymentPage = () => {
-  return (
-    <div>Payment</div>
-  )
-}
+  redirect("select-skip");
+};
 
 export default PaymentPage;

@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation";
+
 const ChooseDatePage = () => {
-  return (
-    <div>Choose Date</div>
-  )
-}
+  redirect("select-skip");
+};
 
 export default ChooseDatePage;

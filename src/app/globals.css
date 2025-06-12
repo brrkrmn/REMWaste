@@ -4,6 +4,7 @@
   --color-linear-background: linear-gradient(90deg,rgba(27, 36, 19, 1) 0%, rgba(0, 0, 0, 1) 50%);
   --color-background: #000000;
   --color-foreground: #dedfdc;
+  --color-foreground-secondary: #9ea495;
   --color-primary: #9de952;
 }
 
@@ -13,7 +14,7 @@ body {
 }
 
 .container {
-  @apply w-full max-w-[1400px] min-h-screen mx-auto;
+  @apply w-full max-w-[1400px] min-h-screen mx-auto px-4 md:px-10;
 }
 
 .responsiveFlex {

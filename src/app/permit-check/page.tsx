@@ -1,7 +1,7 @@
+import { redirect } from "next/navigation";
+
 const PermitCheckPage = () => {
-  return (
-    <div>Permit Check Page</div>
-  )
-}
+  redirect("select-skip");
+};
 
 export default PermitCheckPage;
