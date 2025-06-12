@@ -11,7 +11,7 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState(pathname || "/");
 
   return (
-    <div className="w-60 flex flex-row md:flex-col gap-8 items-start fixed top-1/2 -translate-y-1/2 left-10">
+    <div className="w-full md:w-60 py-10 md:py-0 flex flex-row md:flex-col gap-4 sm:gap-8 justify-center items-center md:items-start md:fixed md:top-1/2 md:-translate-y-1/2 md:left-10">
       {navLinks.map((navLink) => {
         const isActive = pathname === navLink.link;
         const isHovered = hoveredLink === navLink.link;
@@ -29,16 +29,18 @@ const Navbar = () => {
           >
             <div
               className={`${
-                isActive || isHovered ? "w-16 h-16" : "w-12 h-12"
+                isActive || isHovered
+                  ? "w-10 sm:w-14 md:w-16"
+                  : "w-8 sm:w-12 md:w-12"
               } ${
                 !isActive && isHovered
                   ? "text-background"
                   : !isActive && !isHovered
-                  ? "text-foreground-secondary ml-2"
+                  ? "text-foreground-secondary md:ml-2"
                   : isActive && !isHovered
                   ? "text-primary"
                   : "text-background"
-              } transition-all duration-300 flex items-center justify-center border-1 rounded-full *:text-xl`}
+              } transition-all aspect-square duration-300 flex items-center justify-center border-1 rounded-full *:text-xl`}
             >
               {navLink.icon}
               {isHovered && (
@@ -61,7 +63,7 @@ const Navbar = () => {
                   navLink.disabled
                     ? "text-foreground-secondary"
                     : "text-primary"
-                } flex absolute text-start w-full text-nowrap -right-20 text-lg underline underline-offset-8`}
+                } flex absolute text-start w-full text-nowrap -bottom-8 md:bottom-auto md:-right-20 text-lg underline underline-offset-8`}
               >
                 {navLink.text.split("").map((char, i) => (
                   <motion.p

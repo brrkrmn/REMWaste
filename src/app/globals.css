@@ -1,7 +1,8 @@
 @import "tailwindcss";
 
 @theme {
-  --color-linear-background: linear-gradient(90deg,rgba(27, 36, 19, 1) 0%, rgba(0, 0, 0, 1) 50%);
+  --color-linear-background-left: linear-gradient(90deg,rgba(27, 36, 19, 1) 0%, rgba(0, 0, 0, 1) 50%);
+  --color-linear-background-top: linear-gradient(180deg,rgba(27, 36, 19, 1) 0%, rgba(0, 0, 0, 1) 50%);
   --color-background: #000000;
   --color-foreground: #dedfdc;
   --color-foreground-secondary: #9ea495;
@@ -9,8 +10,14 @@
 }
 
 body {
-  background: var(--color-linear-background);
+  background: var(--color-linear-background-left);
   color: var(--color-foreground);
+}
+
+@media (max-width: 768px) {
+  body {
+    background: var(--color-linear-background-top);
+  }
 }
 
 .container {
