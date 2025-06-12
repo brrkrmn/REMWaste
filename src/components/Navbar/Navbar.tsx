@@ -11,7 +11,7 @@ const Navbar = () => {
   const [hoveredLink, setHoveredLink] = useState(pathname || "/");
 
   return (
-    <div className="w-fit flex flex-row md:flex-col gap-8 items-center">
+    <div className="w-60 flex flex-row md:flex-col gap-8 items-start fixed top-1/2 -translate-y-1/2 left-10">
       {navLinks.map((navLink) => {
         const isActive = pathname === navLink.link;
         const isHovered = hoveredLink === navLink.link;
@@ -34,7 +34,7 @@ const Navbar = () => {
                 !isActive && isHovered
                   ? "text-background"
                   : !isActive && !isHovered
-                  ? "text-foreground-secondary"
+                  ? "text-foreground-secondary ml-2"
                   : isActive && !isHovered
                   ? "text-primary"
                   : "text-background"
